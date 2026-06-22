@@ -1,0 +1,18 @@
+Read Me Too
+
+1. Minotaupe's Downward Drill (Arcade / Action 2D)
+Le concept : Un jeu à la Downwell ou Dig Dug. L'objectif est de creuser le plus profondément possible dans une mine infinie avant que l'écran ne te rattrape ou que ta foreuse ne surchauffe.
+Mécaniques : Utiliser des attaques de base pour détruire les rochers classiques, et déclencher une jauge spéciale "Tunnelier" pour dasher à travers des obstacles coriaces. Il faut esquiver les poches de magma et les ennemis souterrains.
+Côté technique : Un très bon point de départ pour manipuler la génération procédurale infinie avec des TileMaps sur Godot, et implémenter des contrôles physiques très nerveux en C#.
+2. Minotaupe Mining Co. (Gestion / Crafting)
+Le concept : Un jeu où Minotaupe gère sa propre exploitation minière. Il part en expédition souterraine pour récolter des minerais rares et revient à sa base pour forger des améliorations.
+Mécaniques : Les roches plus dures nécessitent d'améliorer la tête et les griffes d'acier de Minotaupe. Tu dois ramener ton butin à la surface sans te retrouver surchargé.
+Côté technique : Le projet parfait pour mettre en place une logique de ressources et un système d'inventaire interactif en glisser-déposer avec une limite de slots pour gérer l'espace dans le sac de minerais.
+3. The Sandstorm Arena (Survie en arène)
+Le concept : Un jeu d'action en vue de dessus (Top-Down Shooter/Slasher) où tu contrôles Minotaupe au centre d'une tempête de sable qui s'intensifie.
+Mécaniques : Exploiter son talent "Baigne Sable". Plus la tempête est forte, plus Minotaupe est rapide. Tu dois survivre à des vagues d'ennemis en utilisant des attaques de zone comme "Séisme" pour nettoyer l'écran.
+Côté technique : Idéal pour structurer des machines d'états (State Machines) pour l'intelligence artificielle des ennemis et gérer des hitbox/hurtbox complexes lors des attaques en rotation.
+4. Labyrinthe Souterrain (Infiltration / Puzzle)
+Le concept : Minotaupe doit s'infiltrer dans un repaire souterrain ennemi (comme une base de la Team Rocket) pour récupérer des objets volés.
+Mécaniques : Modifier le terrain en temps réel en creusant de nouveaux tunnels pour contourner le champ de vision des gardes, créer des éboulements pour bloquer les passages, et surgir du sol dans leur dos.
+Côté technique : Un bon défi algorithmique pour gérer la destruction de terrain (pathfinding dynamique) et la ligne de vue des ennemis.
