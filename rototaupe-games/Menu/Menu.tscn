@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://6on34h4xs0i4"]
+
+[ext_resource type="Script" uid="uid://72p6ev0ebflx" path="res://Menu/Menu.cs" id="1_e56cd"]
+[ext_resource type="Texture2D" uid="uid://djbjj0lrtmnvw" path="res://529.png" id="1_jf1j2"]
+
+[node name="Control" type="Control" unique_id=1142859383]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e56cd")
+
+[node name="Rototaupe_right" type="Sprite2D" parent="." unique_id=196395718]
+position = Vector2(823.99994, 325)
+scale = Vector2(1.4105263, 1.3621054)
+texture = ExtResource("1_jf1j2")
+
+[node name="529" type="Sprite2D" parent="." unique_id=1730047807]
+position = Vector2(254.5646, 369.4375)
+scale = Vector2(-1.0781491, 1.1723684)
+texture = ExtResource("1_jf1j2")
+
+[node name="Title" type="Label" parent="." unique_id=109828475]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 77.0
+offset_right = 875.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 50
+text = "Rototaupe Mini-Games"
+
+[node name="Box" type="VBoxContainer" parent="." unique_id=1066229060]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 162.0
+offset_right = 877.0
+offset_bottom = 659.0
+
+[node name="Row_1" type="HBoxContainer" parent="Box" unique_id=631846445]
+layout_mode = 2
+size_flags_stretch_ratio = 28.85
+alignment = 1
+
+[node name="Mini_Game_1" type="Button" parent="Box/Row_1" unique_id=350873823]
+layout_mode = 2
+text = "Game 1"
+
+[node name="Mini_Game_2" type="Button" parent="Box/Row_1" unique_id=289809284]
+layout_mode = 2
+text = "Game 2"
+
+[node name="Row_2" type="HBoxContainer" parent="Box" unique_id=1942959901]
+layout_mode = 2
+alignment = 1
+
+[node name="Mini_Game_3" type="Button" parent="Box/Row_2" unique_id=292981649]
+layout_mode = 2
+text = "Game 3"
+
+[node name="Mini_Game_4" type="Button" parent="Box/Row_2" unique_id=431309785]
+layout_mode = 2
+text = "Game 4"
+
+[node name="Row_3" type="VBoxContainer" parent="Box" unique_id=393608773]
+layout_mode = 2
+
+[node name="About_the_Games" type="Button" parent="Box/Row_3" unique_id=355389413]
+layout_mode = 2
+text = "About the Games"

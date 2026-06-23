@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bu3mw0utcg7h6"]
+
+[node name="Menu4" type="Control" unique_id=1609326413]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
