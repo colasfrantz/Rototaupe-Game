@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bu3mw0utcg7h6"]
 
+[ext_resource type="Script" uid="uid://cemkh2fn6napy" path="res://Game4/Menu4.cs" id="1_17rvk"]
+
 [node name="Menu4" type="Control" unique_id=1609326413]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_17rvk")
+
+[node name="Title" type="Label" parent="." unique_id=946152195]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 13.0
+offset_right = 100.0
+offset_bottom = 36.0
+text = "Menu 4"
+
+[node name="Back" type="Button" parent="." unique_id=865062422]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 603.0
+offset_right = 130.0
+offset_bottom = 634.0
+text = "Back"

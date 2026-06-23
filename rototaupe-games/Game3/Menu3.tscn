@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bhc6niyigguh5"]
 
+[ext_resource type="Script" uid="uid://cibbaed5w0xjn" path="res://Game3/Menu3.cs" id="1_fhawu"]
+
 [node name="Menu3" type="Control" unique_id=1470199676]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fhawu")
+
+[node name="Title" type="Label" parent="." unique_id=1769564309]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 14.0
+offset_right = 102.0
+offset_bottom = 37.0
+text = "Menu 3"
+
+[node name="Back" type="Button" parent="." unique_id=1614215065]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 598.0
+offset_right = 125.0
+offset_bottom = 629.0
+text = "Back"

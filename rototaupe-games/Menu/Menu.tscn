@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6on34h4xs0i4"]
 
 [ext_resource type="Script" uid="uid://72p6ev0ebflx" path="res://Menu/Menu.cs" id="1_e56cd"]
-[ext_resource type="Texture2D" uid="uid://djbjj0lrtmnvw" path="res://529.png" id="1_jf1j2"]
+[ext_resource type="Texture2D" uid="uid://djbjj0lrtmnvw" path="res://Assets/529.png" id="1_jf1j2"]
 
 [node name="Control" type="Control" unique_id=1142859383]
 layout_mode = 3

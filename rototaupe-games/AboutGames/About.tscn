@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dt64r2au1xvow"]
 
+[ext_resource type="Script" uid="uid://beg1oc7b013oq" path="res://AboutGames/About.cs" id="1_qydel"]
+
 [node name="About" type="Control" unique_id=727099583]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qydel")
+
+[node name="Title" type="Label" parent="." unique_id=1679471492]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 13.0
+offset_right = 100.0
+offset_bottom = 36.0
+text = "About the games"
+
+[node name="Back" type="Button" parent="." unique_id=105856298]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 600.0
+offset_right = 135.0
+offset_bottom = 631.0
+text = "Back"
