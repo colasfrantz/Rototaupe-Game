@@ -45,7 +45,7 @@ alignment = 1
 
 [node name="Mini_Game_1" type="Button" parent="Box/Row_1" unique_id=350873823]
 layout_mode = 2
-text = "Game 1"
+text = "The Sandstorm Arena"
 
 [node name="Mini_Game_2" type="Button" parent="Box/Row_1" unique_id=289809284]
 layout_mode = 2
