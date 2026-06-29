@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bu3mw0utcg7h6"]
 
-[ext_resource type="Script" uid="uid://cemkh2fn6napy" path="res://Game4/Menu4.cs" id="1_17rvk"]
+[ext_resource type="Script" uid="uid://cemkh2fn6napy" path="res://Game4/Scripts/Menu4.cs" id="1_17rvk"]
 
 [node name="Menu4" type="Control" unique_id=1609326413]
 layout_mode = 3

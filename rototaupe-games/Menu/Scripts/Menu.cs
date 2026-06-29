@@ -31,31 +31,31 @@ public partial class Menu : Control
 	public void OnGame1Pressed()
 	{
 		GD.Print("The Sandstorm Arena Launches !");
-		GetTree().ChangeSceneToFile("res://The Sandstorm Arena/Menu1.tscn");
+		GetTree().ChangeSceneToFile("res://The Sandstorm Arena/Scenes/Menu1.tscn");
 	}
 	
 	public void OnGame2Pressed()
 	{
 		GD.Print("Game 2 Launches !");
-		GetTree().ChangeSceneToFile("res://Game2/Menu2.tscn");
+		GetTree().ChangeSceneToFile("res://Game2/Scenes/Menu2.tscn");
 	}
 	
 	public void OnGame3Pressed()
 	{
 		GD.Print("Game 3 Launches !");
-		GetTree().ChangeSceneToFile("res://Game3/Menu3.tscn");
+		GetTree().ChangeSceneToFile("res://Game3/Scenes/Menu3.tscn");
 	}
 	
 	public void OnGame4Pressed()
 	{
 		GD.Print("Game 4 Launches !");
-		GetTree().ChangeSceneToFile("res://Game4/Menu4.tscn");
+		GetTree().ChangeSceneToFile("res://Game4/Scenes/Menu4.tscn");
 	}
 	
 	public void OnAboutTheGamesPressed()
 	{
 		GD.Print("Learn More About The Games !");
-		GetTree().ChangeSceneToFile("res://AboutGames/About.tscn");
+		GetTree().ChangeSceneToFile("res://AboutGames/Scenes/About.tscn");
 	}
 
 	public override void _Process(double delta)

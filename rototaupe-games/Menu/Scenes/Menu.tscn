@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6on34h4xs0i4"]
 
-[ext_resource type="Script" uid="uid://72p6ev0ebflx" path="res://Menu/Menu.cs" id="1_e56cd"]
-[ext_resource type="Texture2D" uid="uid://djbjj0lrtmnvw" path="res://Assets/529.png" id="1_jf1j2"]
+[ext_resource type="Script" uid="uid://72p6ev0ebflx" path="res://Menu/Scripts/Menu.cs" id="1_3vxhy"]
+[ext_resource type="Texture2D" uid="uid://djbjj0lrtmnvw" path="res://Assets/Textures/529.png" id="2_332dp"]
 
 [node name="Control" type="Control" unique_id=1142859383]
 layout_mode = 3
@@ -10,17 +10,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_e56cd")
+script = ExtResource("1_3vxhy")
 
 [node name="Rototaupe_right" type="Sprite2D" parent="." unique_id=196395718]
 position = Vector2(823.99994, 325)
 scale = Vector2(1.4105263, 1.3621054)
-texture = ExtResource("1_jf1j2")
+texture = ExtResource("2_332dp")
 
 [node name="529" type="Sprite2D" parent="." unique_id=1730047807]
 position = Vector2(254.5646, 369.4375)
 scale = Vector2(-1.0781491, 1.1723684)
-texture = ExtResource("1_jf1j2")
+texture = ExtResource("2_332dp")
 
 [node name="Title" type="Label" parent="." unique_id=109828475]
 layout_mode = 0

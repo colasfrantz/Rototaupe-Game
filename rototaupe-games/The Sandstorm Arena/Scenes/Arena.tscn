@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://8ceeyxnoenpi"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_y0tro"]
+
+[node name="Arena" type="Node2D" unique_id=27299725]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1297820741]
+modulate = Color(0.41893095, 0.1639834, 0, 1)
+position = Vector2(866, 465)
+scale = Vector2(4749.5, 3095.9998)
+mesh = SubResource("QuadMesh_y0tro")
+metadata/_edit_lock_ = true

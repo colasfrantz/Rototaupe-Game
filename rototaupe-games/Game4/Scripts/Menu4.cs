@@ -18,7 +18,7 @@ public partial class Menu4 : Control
 	public void OnBackPressed()
 	{
 		GD.Print("Going back to the menu");
-		GetTree().ChangeSceneToFile("res://Menu/Menu.tscn");
+		GetTree().ChangeSceneToFile("res://Menu/Scenes/Menu.tscn");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

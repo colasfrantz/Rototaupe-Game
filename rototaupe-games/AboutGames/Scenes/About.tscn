@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dt64r2au1xvow"]
 
-[ext_resource type="Script" uid="uid://beg1oc7b013oq" path="res://AboutGames/About.cs" id="1_qydel"]
+[ext_resource type="Script" uid="uid://beg1oc7b013oq" path="res://AboutGames/Scripts/About.cs" id="1_nrtuq"]
 
 [node name="About" type="Control" unique_id=727099583]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qydel")
+script = ExtResource("1_nrtuq")
 
 [node name="Title" type="Label" parent="." unique_id=1679471492]
 layout_mode = 0

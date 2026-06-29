@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Menu1 : Control
+public partial class About : Control
 {
 	public Label _title;
 	public Button _back;
@@ -18,7 +18,7 @@ public partial class Menu1 : Control
 	public void OnBackPressed()
 	{
 		GD.Print("Going back to the menu");
-		GetTree().ChangeSceneToFile("res://Menu/Menu.tscn");
+		GetTree().ChangeSceneToFile("res://Menu/Scenes/Menu.tscn");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

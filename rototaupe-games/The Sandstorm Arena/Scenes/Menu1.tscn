@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckevvu0f21kwq"]
 
-[ext_resource type="Script" uid="uid://cumwosn15ig4h" path="res://The Sandstorm Arena/Menu1.cs" id="1_1g2vf"]
+[ext_resource type="Script" uid="uid://cumwosn15ig4h" path="res://The Sandstorm Arena/Scripts/Menu1.cs" id="1_img0e"]
 
 [node name="Menu1" type="Control" unique_id=1664928237]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1g2vf")
+script = ExtResource("1_img0e")
 
 [node name="Title" type="Label" parent="." unique_id=614413150]
 layout_mode = 0
