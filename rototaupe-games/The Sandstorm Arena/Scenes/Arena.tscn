@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://8ceeyxnoenpi"]
 
+[ext_resource type="PackedScene" uid="uid://b2cncchgty8ar" path="res://The Sandstorm Arena/Scenes/Rock.tscn" id="1_d5maw"]
+[ext_resource type="PackedScene" uid="uid://hdtl8pxx5ytn" path="res://The Sandstorm Arena/Scenes/Player.tscn" id="2_cb3xx"]
+
 [sub_resource type="QuadMesh" id="QuadMesh_y0tro"]
 
 [node name="Arena" type="Node2D" unique_id=27299725]
@@ -10,3 +13,42 @@ position = Vector2(866, 465)
 scale = Vector2(4749.5, 3095.9998)
 mesh = SubResource("QuadMesh_y0tro")
 metadata/_edit_lock_ = true
+
+[node name="Rock" parent="." unique_id=2119996429 instance=ExtResource("1_d5maw")]
+position = Vector2(136, 156)
+
+[node name="Rock3" parent="." unique_id=2117310553 instance=ExtResource("1_d5maw")]
+position = Vector2(928, 531)
+
+[node name="Rock4" parent="." unique_id=564280942 instance=ExtResource("1_d5maw")]
+position = Vector2(-18, 644)
+
+[node name="Rock6" parent="." unique_id=1644685336 instance=ExtResource("1_d5maw")]
+position = Vector2(623, -28)
+
+[node name="Rock7" parent="." unique_id=291585965 instance=ExtResource("1_d5maw")]
+position = Vector2(250, -233)
+
+[node name="Rock8" parent="." unique_id=419789907 instance=ExtResource("1_d5maw")]
+position = Vector2(1533, 333)
+
+[node name="Rock9" parent="." unique_id=501656928 instance=ExtResource("1_d5maw")]
+position = Vector2(1453, 842)
+
+[node name="Rock10" parent="." unique_id=631325585 instance=ExtResource("1_d5maw")]
+position = Vector2(795, 1002)
+
+[node name="Rock11" parent="." unique_id=2081292716 instance=ExtResource("1_d5maw")]
+position = Vector2(-440, 984)
+
+[node name="Rock12" parent="." unique_id=789436465 instance=ExtResource("1_d5maw")]
+position = Vector2(-499, 227)
+
+[node name="Rock5" parent="." unique_id=674087395 instance=ExtResource("1_d5maw")]
+position = Vector2(649, 677)
+
+[node name="Rock2" parent="." unique_id=749338113 instance=ExtResource("1_d5maw")]
+position = Vector2(959, 114)
+
+[node name="Player" parent="." unique_id=498831959 instance=ExtResource("2_cb3xx")]
+position = Vector2(589, 292)

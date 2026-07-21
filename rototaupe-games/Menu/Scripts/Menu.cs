@@ -31,7 +31,7 @@ public partial class Menu : Control
 	public void OnGame1Pressed()
 	{
 		GD.Print("The Sandstorm Arena Launches !");
-		GetTree().ChangeSceneToFile("res://The Sandstorm Arena/Scenes/Menu1.tscn");
+		GetTree().ChangeSceneToFile("res://The Sandstorm Arena/Scenes/Arena.tscn");
 	}
 	
 	public void OnGame2Pressed()
