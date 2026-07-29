@@ -4,6 +4,15 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	public float Speed = 300.0f;
+	[Signal]
+	public delegate void DamageTakenEventHandler();
+	public RemoteTransform2D CameraRemoteTransform;
+	
+	public override void _Ready()
+	{
+		CameraRemoteTransform = GetNode<RemoteTransform2D>("CameraRemoteTransform");
+		DamageTaken += OnDamageTaken;
+	}
 
 	public override void _Process(double delta)
 	{
@@ -38,12 +47,18 @@ public partial class Player : CharacterBody2D
 		MoveAndSlide();
 	}
 	
-	private void OnHitboxBodyEntered(Node2D body)
+	private void _on_hitbox_body_entered(Node2D body)
 	{
-		if(body is Enemy1)
+		if (body is Enemy1)
 		{
-			GD.Print("touched the player");
+			EmitSignal(SignalName.DamageTaken);
 		}
+	}
+	
+	private void OnDamageTaken()
+	{
+		GD.Print("Player took some damage");
+		QueueFree();
 	}
 	
 	
