@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://blo2u6w4w6fw0"]
+
+[ext_resource type="Texture2D" uid="uid://6g8r87kdvgb1" path="res://Assets/Textures/enemy1.png" id="1_6h3xw"]
+[ext_resource type="Script" uid="uid://sf2vb1s1lffa" path="res://The Sandstorm Arena/Scripts/Enemy1.cs" id="1_b4jrr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4jrr"]
+radius = 30.0
+height = 60.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6h3xw"]
+radius = 276.0
+
+[node name="Enemy1" type="CharacterBody2D" unique_id=1167670165]
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_b4jrr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=356166447]
+scale = Vector2(3, 3)
+texture = ExtResource("1_6h3xw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1722640539]
+position = Vector2(11, -1)
+shape = SubResource("CapsuleShape2D_b4jrr")
+
+[node name="Player detector" type="Area2D" parent="." unique_id=934091306]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player detector" unique_id=985475225]
+shape = SubResource("CircleShape2D_6h3xw")

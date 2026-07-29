@@ -2,13 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://b2cncchgty8ar" path="res://The Sandstorm Arena/Scenes/Rock.tscn" id="1_d5maw"]
 [ext_resource type="PackedScene" uid="uid://hdtl8pxx5ytn" path="res://The Sandstorm Arena/Scenes/Player.tscn" id="2_cb3xx"]
+[ext_resource type="PackedScene" uid="uid://blo2u6w4w6fw0" path="res://The Sandstorm Arena/Scenes/Enemy1.tscn" id="3_ensv4"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_y0tro"]
 
 [node name="Arena" type="Node2D" unique_id=27299725]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1297820741]
-modulate = Color(0.41893095, 0.1639834, 0, 1)
+modulate = Color(0.08752493, 0.21824336, 2.4065375e-07, 1)
 position = Vector2(866, 465)
 scale = Vector2(4749.5, 3095.9998)
 mesh = SubResource("QuadMesh_y0tro")
@@ -52,3 +53,6 @@ position = Vector2(959, 114)
 
 [node name="Player" parent="." unique_id=498831959 instance=ExtResource("2_cb3xx")]
 position = Vector2(589, 292)
+
+[node name="Enemy1" parent="." unique_id=1167670165 instance=ExtResource("3_ensv4")]
+position = Vector2(1014, 344)
