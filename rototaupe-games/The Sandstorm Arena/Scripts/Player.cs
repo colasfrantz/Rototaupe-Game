@@ -5,13 +5,14 @@ public partial class Player : CharacterBody2D
 {
 	public float Speed = 300.0f;
 	[Signal]
-	public delegate void DamageTakenEventHandler();
+	public delegate void PlayerDeathEventHandler();
 	public RemoteTransform2D CameraRemoteTransform;
+	public float Health = 100.0f;
 	
 	public override void _Ready()
 	{
 		CameraRemoteTransform = GetNode<RemoteTransform2D>("CameraRemoteTransform");
-		DamageTaken += OnDamageTaken;
+		PlayerDeath  += OnPlayerDeath;
 	}
 
 	public override void _Process(double delta)
@@ -51,13 +52,25 @@ public partial class Player : CharacterBody2D
 	{
 		if (body is Enemy1)
 		{
-			EmitSignal(SignalName.DamageTaken);
+			GD.Print("touch an Enemy1");
 		}
 	}
 	
-	private void OnDamageTaken()
+	
+	public void TakeDamage(float amount)
 	{
-		GD.Print("Player took some damage");
+		Health -= amount;
+		GD.Print("Health: " + Health);
+
+		if (Health <= 0)
+		{
+			EmitSignal(SignalName.PlayerDeath);
+		}
+	}
+	
+	private void OnPlayerDeath()
+	{
+		GD.Print("Player is dead");
 		QueueFree();
 	}
 	

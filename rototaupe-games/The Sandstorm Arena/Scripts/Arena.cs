@@ -10,7 +10,7 @@ public partial class Arena : Node2D
 	{
 		MainCamera = GetNode<Camera2D>("MainCamera");
 		player = GetNode<Player>("Player");
-		player.DamageTaken += OnPlayerDied;
+		player.PlayerDeath  += OnPlayerDied;
 		player.CameraRemoteTransform.RemotePath = MainCamera.GetPath();
 	}
 

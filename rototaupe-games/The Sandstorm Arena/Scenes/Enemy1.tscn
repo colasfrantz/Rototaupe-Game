@@ -10,17 +10,22 @@ height = 60.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6h3xw"]
 radius = 276.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_erqsb"]
+radius = 22.0
+height = 56.0
+
 [node name="Enemy1" type="CharacterBody2D" unique_id=1167670165]
 collision_layer = 8
 collision_mask = 9
 script = ExtResource("1_b4jrr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=356166447]
+rotation = -3.1364956
 scale = Vector2(3, 3)
 texture = ExtResource("1_6h3xw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1722640539]
-position = Vector2(11, -1)
+position = Vector2(-10, 0)
 shape = SubResource("CapsuleShape2D_b4jrr")
 
 [node name="Player detector" type="Area2D" parent="." unique_id=934091306]
@@ -29,3 +34,16 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player detector" unique_id=985475225]
 shape = SubResource("CircleShape2D_6h3xw")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1942623155]
+
+[node name="AttackHitbox" type="Area2D" parent="." unique_id=118361539]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=1485275760]
+shape = SubResource("CapsuleShape2D_erqsb")
+
+[connection signal="body_entered" from="Player detector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="Player detector" to="." method="_on_player_detector_body_exited"]
+[connection signal="body_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_body_entered"]
+[connection signal="body_exited" from="AttackHitbox" to="." method="_on_attack_hitbox_body_exited"]
