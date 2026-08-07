@@ -8,11 +8,15 @@ public partial class Player : CharacterBody2D
 	public delegate void PlayerDeathEventHandler();
 	public RemoteTransform2D CameraRemoteTransform;
 	public float Health = 100.0f;
+	public HealthBar _HealthBar;
 	
 	public override void _Ready()
 	{
 		CameraRemoteTransform = GetNode<RemoteTransform2D>("CameraRemoteTransform");
+		_HealthBar = GetNode<HealthBar>("HealthBar");
 		PlayerDeath  += OnPlayerDeath;
+		
+		_HealthBar.InitHealth(Health);
 	}
 
 	public override void _Process(double delta)
@@ -61,6 +65,7 @@ public partial class Player : CharacterBody2D
 	{
 		Health -= amount;
 		GD.Print("Health: " + Health);
+		_HealthBar.Health = Health;
 
 		if (Health <= 0)
 		{

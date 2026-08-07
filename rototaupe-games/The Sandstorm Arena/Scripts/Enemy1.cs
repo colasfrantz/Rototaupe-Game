@@ -9,14 +9,14 @@ public partial class Enemy1 : CharacterBody2D
 	public Vector2 direction = Vector2.Zero;
 	public float stop_distance = 20.0f;
 	
-	public float DamageAmount = 10.0f;
+	public float DamageAmount = 5.0f;
 	private Timer AttackTimer;
 	private bool TouchingPlayer = false;
 	
 	public override void _Ready()
 	{
 		AttackTimer = GetNode<Timer>("AttackTimer");
-		AttackTimer.WaitTime = 1.5;
+		AttackTimer.WaitTime = 2;
 		AttackTimer.OneShot = false;
 		AttackTimer.Timeout += OnAttackTimerTimeout;
 	}

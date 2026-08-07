@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c4ax142662mlg" path="res://The Sandstorm Arena/Scripts/Player.cs" id="1_2qyu8"]
 [ext_resource type="Texture2D" uid="uid://dn7e0ctquxeaa" path="res://Assets/Textures/topdown_character.png" id="1_400do"]
 [ext_resource type="Texture2D" uid="uid://cc7kiso721fqw" path="res://Assets/Textures/weapon.png" id="2_2qyu8"]
+[ext_resource type="PackedScene" uid="uid://cet2cfyqxxrm1" path="res://The Sandstorm Arena/Scenes/HealthBar.tscn" id="4_gkhx6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_400do"]
 radius = 45.0
@@ -27,24 +28,25 @@ position = Vector2(15.666667, -0.33333334)
 texture = ExtResource("2_2qyu8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=506919228]
-visible = false
 position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_400do")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=740413735]
-visible = false
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=419717092]
-visible = false
 collision_layer = 4
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1451456360]
-visible = false
 shape = SubResource("CapsuleShape2D_2qyu8")
 
 [node name="CameraRemoteTransform" type="RemoteTransform2D" parent="." unique_id=641597547]
-visible = false
+
+[node name="HealthBar" parent="." unique_id=290621845 instance=ExtResource("4_gkhx6")]
+offset_left = -51.25
+offset_top = -83.75
+offset_right = 74.999985
+offset_bottom = -57.5
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
