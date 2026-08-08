@@ -10,20 +10,30 @@ public partial class Player : CharacterBody2D
 	public float Health = 100.0f;
 	private AnimatedSprite2D body;
 	public HealthBar _HealthBar;
+	public Vector2 lastDirection = new Vector2(50.0f, 0.0f);
+	public Area2D attackArea;
+	public float AttackRange = 50.0f;
+	
 	
 	public override void _Ready()
 	{
 		CameraRemoteTransform = GetNode<RemoteTransform2D>("CameraRemoteTransform");
 		body = GetNode<AnimatedSprite2D>("Body");
+		attackArea = GetNode<Area2D>("AttackArea");
 		_HealthBar = GetNode<HealthBar>("HealthBar");
 		PlayerDeath  += OnPlayerDeath;
 		
 		_HealthBar.InitHealth(Health);
+		attackArea.Position = lastDirection.Normalized() * AttackRange;
 	}
 
 	public override void _Process(double delta)
 	{
 		//LookAt(GetGlobalMousePosition());
+		if(Input.IsActionJustPressed("attack"))
+		{
+			attackArea.Position = lastDirection.Normalized() * AttackRange;
+		}
 		
 		
 		if (Input.IsActionJustPressed("quit game"))
@@ -42,6 +52,7 @@ public partial class Player : CharacterBody2D
 
 		if (moveDir != Vector2.Zero)
 		{
+			lastDirection = moveDir;
 			Velocity = Speed * moveDir.Normalized();
 			UpdateAnimation(moveDir);
 		}

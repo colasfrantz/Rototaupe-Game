@@ -98,6 +98,10 @@ height = 100.0
 radius = 41.0
 height = 92.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jcgg"]
+radius = 23.750004
+height = 65.00001
+
 [node name="Player" type="CharacterBody2D" unique_id=498831959]
 scale = Vector2(0.8, 0.8)
 collision_layer = 2
@@ -130,14 +134,13 @@ shape = SubResource("CapsuleShape2D_2qyu8")
 offset_left = -62.5
 offset_top = -83.75
 offset_right = 63.749985
-offset_bottom = -57.5
+offset_bottom = -77.5
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=545427254]
-visible = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackArea" unique_id=349635700]
-visible = false
 scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_5jcgg")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
