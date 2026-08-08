@@ -13,6 +13,8 @@ public partial class Menu : Control
 	
 	public override void _Ready()
 	{
+		Input.MouseMode = Input.MouseModeEnum.Visible;
+		
 		_title = GetNode<Label>("Title");
 		_game1Button = GetNode<Button>("Box/Row_1/Mini_Game_1");
 		_game2Button = GetNode<Button>("Box/Row_1/Mini_Game_2");

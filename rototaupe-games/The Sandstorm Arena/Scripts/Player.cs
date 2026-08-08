@@ -8,11 +8,13 @@ public partial class Player : CharacterBody2D
 	public delegate void PlayerDeathEventHandler();
 	public RemoteTransform2D CameraRemoteTransform;
 	public float Health = 100.0f;
+	private AnimatedSprite2D body;
 	public HealthBar _HealthBar;
 	
 	public override void _Ready()
 	{
 		CameraRemoteTransform = GetNode<RemoteTransform2D>("CameraRemoteTransform");
+		body = GetNode<AnimatedSprite2D>("Body");
 		_HealthBar = GetNode<HealthBar>("HealthBar");
 		PlayerDeath  += OnPlayerDeath;
 		
@@ -21,11 +23,12 @@ public partial class Player : CharacterBody2D
 
 	public override void _Process(double delta)
 	{
-		LookAt(GetGlobalMousePosition());
+		//LookAt(GetGlobalMousePosition());
 		
 		
 		if (Input.IsActionJustPressed("quit game"))
 		{
+			Input.MouseMode = Input.MouseModeEnum.Visible;
 			GetTree().ChangeSceneToFile("res://Menu/Scenes/Menu.tscn");
 		}
 	}
@@ -40,6 +43,7 @@ public partial class Player : CharacterBody2D
 		if (moveDir != Vector2.Zero)
 		{
 			Velocity = Speed * moveDir.Normalized();
+			UpdateAnimation(moveDir);
 		}
 		else
 		{
@@ -47,9 +51,22 @@ public partial class Player : CharacterBody2D
 				Mathf.MoveToward(Velocity.X, 0, Speed),
 				Mathf.MoveToward(Velocity.Y, 0, Speed)
 			);
+			body.Stop();
 		}
 
 		MoveAndSlide();
+	}
+	
+	private void UpdateAnimation(Vector2 direction)
+	{
+		if (Mathf.Abs(direction.X) > Mathf.Abs(direction.Y))
+		{
+			body.Play(direction.X > 0 ? "Right" : "Left");
+		}
+		else
+		{
+			body.Play(direction.Y > 0 ? "Down" : "Up");
+		}
 	}
 	
 	private void _on_hitbox_body_entered(Node2D body)

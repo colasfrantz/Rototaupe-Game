@@ -8,6 +8,8 @@ public partial class Arena : Node2D
 
 	public override void _Ready()
 	{
+		Input.MouseMode = Input.MouseModeEnum.Hidden;
+		
 		MainCamera = GetNode<Camera2D>("MainCamera");
 		player = GetNode<Player>("Player");
 		player.PlayerDeath  += OnPlayerDied;
@@ -16,6 +18,7 @@ public partial class Arena : Node2D
 
 	private void OnPlayerDied()
 	{
+		Input.MouseMode = Input.MouseModeEnum.Visible;
 		GD.Print("game over");
 		GetTree().CreateTimer(3).Timeout += () => GetTree().ChangeSceneToFile("res://Menu/Scenes/Menu.tscn");
 	}
