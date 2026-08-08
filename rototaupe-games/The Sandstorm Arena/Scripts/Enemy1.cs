@@ -6,12 +6,15 @@ public partial class Enemy1 : CharacterBody2D
 	
 	public Player player = null;
 	public float Speed = 100.0f;
+	public float Health = 100.0f;
+	
 	public Vector2 direction = Vector2.Zero;
 	public float stop_distance = 20.0f;
 	
 	public float DamageAmount = 5.0f;
 	private Timer AttackTimer;
 	private bool TouchingPlayer = false;
+	
 	
 	public override void _Ready()
 	{
@@ -108,6 +111,16 @@ public partial class Enemy1 : CharacterBody2D
 		{
 			GD.Print(Name + " is attacking");
 			player.TakeDamage(DamageAmount);
+		}
+	}
+	
+	public void TakeDamage(float amount)
+	{
+		Health -= amount;
+		GD.Print(Name + "'s Health: " + Health);
+		if (Health <= 0)
+		{
+			//EmitSignal(SignalName.Enemy1Death); TO DO
 		}
 	}
 }

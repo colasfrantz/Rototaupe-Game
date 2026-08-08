@@ -7,10 +7,14 @@ public partial class Player : CharacterBody2D
 	[Signal]
 	public delegate void PlayerDeathEventHandler();
 	public RemoteTransform2D CameraRemoteTransform;
-	public float Health = 100.0f;
 	private AnimatedSprite2D body;
+	
+	
+	public float Health = 100.0f;
 	public HealthBar _HealthBar;
+	
 	public Vector2 lastDirection = new Vector2(50.0f, 0.0f);
+	
 	public Area2D attackArea;
 	public float AttackRange = 50.0f;
 	
@@ -33,6 +37,13 @@ public partial class Player : CharacterBody2D
 		if(Input.IsActionJustPressed("attack"))
 		{
 			attackArea.Position = lastDirection.Normalized() * AttackRange;
+			foreach (OverlapingBody in GetOverlappingBodies())
+			{
+				if(OverlapingBody is Enemy1)
+				{
+					OverlapingBody.TakeDamage(30.0f); //here
+				}
+			}
 		}
 		
 		
