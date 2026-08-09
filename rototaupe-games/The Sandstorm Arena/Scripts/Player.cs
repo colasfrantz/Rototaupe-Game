@@ -37,7 +37,7 @@ public partial class Player : CharacterBody2D
 		if(Input.IsActionJustPressed("attack"))
 		{
 			attackArea.Position = lastDirection.Normalized() * AttackRange;
-			foreach (OverlapingBody in GetOverlappingBodies())
+			foreach (CharacterBody2D OverlapingBody in attackArea.GetOverlappingBodies())
 			{
 				if(OverlapingBody is Enemy1)
 				{

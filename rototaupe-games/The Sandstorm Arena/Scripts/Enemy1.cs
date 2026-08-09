@@ -22,6 +22,8 @@ public partial class Enemy1 : CharacterBody2D
 		AttackTimer.WaitTime = 2;
 		AttackTimer.OneShot = false;
 		AttackTimer.Timeout += OnAttackTimerTimeout;
+		
+		Enemy1Death  += OnEnemy1Death;
 	}
 
 	public override void _Process(double delta)
@@ -120,7 +122,13 @@ public partial class Enemy1 : CharacterBody2D
 		GD.Print(Name + "'s Health: " + Health);
 		if (Health <= 0)
 		{
-			//EmitSignal(SignalName.Enemy1Death); TO DO
+			EmitSignal(SignalName.Enemy1Death);
 		}
+	}
+	
+	private void OnEnemy1Death()
+	{
+		GD.Print("Player is dead");
+		QueueFree();
 	}
 }
