@@ -17,6 +17,7 @@ public partial class Player : CharacterBody2D
 	
 	public Area2D attackArea;
 	public float AttackRange = 50.0f;
+	public bool inAttack = false;
 	
 	
 	public override void _Ready()
@@ -36,12 +37,16 @@ public partial class Player : CharacterBody2D
 		//LookAt(GetGlobalMousePosition());
 		if(Input.IsActionJustPressed("attack"))
 		{
-			attackArea.Position = lastDirection.Normalized() * AttackRange;
-			foreach (CharacterBody2D OverlapingBody in attackArea.GetOverlappingBodies())
+			UpdateAttackAnimation(lastDirection);
+			var bodies = attackArea.GetOverlappingBodies();
+			GD.Print("Bodies in attack area: " + bodies.Count);
+			GD.Print("attack them");
+			//attackArea.Position = lastDirection.Normalized() * AttackRange;
+			foreach (Node2D OverlapingBodies in attackArea.GetOverlappingBodies())
 			{
-				if(OverlapingBody is Enemy1)
+				if(OverlapingBodies is Enemy1 enemy)
 				{
-					OverlapingBody.TakeDamage(30.0f); //here
+					enemy.TakeDamage(30.0f);
 				}
 			}
 		}
@@ -77,18 +82,37 @@ public partial class Player : CharacterBody2D
 		}
 
 		MoveAndSlide();
+		attackArea.Position = lastDirection.Normalized() * AttackRange;
+		attackArea.Rotation = lastDirection.Angle();
 	}
 	
 	private void UpdateAnimation(Vector2 direction)
 	{
+		if(!inAttack)
+		{
+			if (Mathf.Abs(direction.X) > Mathf.Abs(direction.Y))
+			{
+				body.Play(direction.X > 0 ? "Right" : "Left");
+			}
+			else
+			{
+				body.Play(direction.Y > 0 ? "Down" : "Up");
+			}
+		}
+	}
+	
+	private void UpdateAttackAnimation(Vector2 direction)
+	{
+		inAttack = true;
 		if (Mathf.Abs(direction.X) > Mathf.Abs(direction.Y))
 		{
-			body.Play(direction.X > 0 ? "Right" : "Left");
+			body.Play(direction.X > 0 ? "Attack_Right" : "Attack_Left");
 		}
 		else
 		{
-			body.Play(direction.Y > 0 ? "Down" : "Up");
+			body.Play(direction.Y > 0 ? "Attack_Down" : "Attack_Up");
 		}
+		inAttack = false;
 	}
 	
 	private void _on_hitbox_body_entered(Node2D body)

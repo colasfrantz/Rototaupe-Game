@@ -3,9 +3,11 @@ using System;
 
 public partial class Enemy1 : CharacterBody2D
 {
+	[Signal]
+	public delegate void Enemy1DeathEventHandler();
 	
 	public Player player = null;
-	public float Speed = 100.0f;
+	public float Speed = 200.0f;
 	public float Health = 100.0f;
 	
 	public Vector2 direction = Vector2.Zero;
@@ -128,7 +130,7 @@ public partial class Enemy1 : CharacterBody2D
 	
 	private void OnEnemy1Death()
 	{
-		GD.Print("Player is dead");
+		GD.Print("Enemy1 is dead");
 		QueueFree();
 	}
 }
