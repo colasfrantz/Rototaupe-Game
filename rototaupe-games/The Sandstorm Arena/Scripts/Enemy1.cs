@@ -73,7 +73,7 @@ public partial class Enemy1 : CharacterBody2D
 			if (player == null)
 			{
 				player = body as Player;
-				GD.Print(Name + " found the player ");
+				GD.Print(Name + " found the player\n" + Name + " is following the Player");
 			}
 		}
 	}
@@ -85,7 +85,7 @@ public partial class Enemy1 : CharacterBody2D
 			if (player != null)
 			{
 				player = null;
-				GD.Print(Name + " lost the player ");
+				GD.Print(Name + " lost the player...");
 			}
 		}
 	}
@@ -113,7 +113,7 @@ public partial class Enemy1 : CharacterBody2D
 	{
 		if (TouchingPlayer && player != null)
 		{
-			GD.Print(Name + " is attacking");
+			GD.Print(Name + " is attacking the Player");
 			player.TakeDamage(DamageAmount);
 		}
 	}
@@ -130,7 +130,7 @@ public partial class Enemy1 : CharacterBody2D
 	
 	private void OnEnemy1Death()
 	{
-		GD.Print("Enemy1 is dead");
+		GD.Print(Name + " is dead");
 		QueueFree();
 	}
 }

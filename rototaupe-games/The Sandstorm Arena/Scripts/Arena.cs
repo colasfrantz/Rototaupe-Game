@@ -19,7 +19,7 @@ public partial class Arena : Node2D
 	private void OnPlayerDied()
 	{
 		Input.MouseMode = Input.MouseModeEnum.Visible;
-		GD.Print("game over");
+		GD.Print("SandStorm Arena: game over - the player died");
 		GetTree().CreateTimer(3).Timeout += () => GetTree().ChangeSceneToFile("res://Menu/Scenes/Menu.tscn");
 	}
 

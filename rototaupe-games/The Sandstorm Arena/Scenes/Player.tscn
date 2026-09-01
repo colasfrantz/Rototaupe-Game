@@ -1,39 +1,41 @@
 [gd_scene format=3 uid="uid://hdtl8pxx5ytn"]
 
 [ext_resource type="Script" uid="uid://c4ax142662mlg" path="res://The Sandstorm Arena/Scripts/Player.cs" id="1_2qyu8"]
-[ext_resource type="Texture2D" uid="uid://8u8428s3e0xn" path="res://Assets/Textures/sprites player/Down/1.png" id="2_g5yjd"]
-[ext_resource type="Texture2D" uid="uid://bhjafp3dkwmdd" path="res://Assets/Textures/sprites player/Attacks/Down/13.png" id="2_vysw5"]
-[ext_resource type="Texture2D" uid="uid://qs3l1dokwta3" path="res://Assets/Textures/sprites player/Down/2.png" id="3_ubd00"]
-[ext_resource type="Texture2D" uid="uid://ctiaqrpurtgu6" path="res://Assets/Textures/sprites player/Attacks/Down/14.png" id="3_y0mnt"]
+[ext_resource type="Texture2D" uid="uid://8u8428s3e0xn" path="res://Assets/sprites player/Still/Down/1.png" id="2_g5yjd"]
+[ext_resource type="Texture2D" uid="uid://bhjafp3dkwmdd" path="res://Assets/sprites player/Attacks/Still/Down/13.png" id="2_vysw5"]
+[ext_resource type="Texture2D" uid="uid://qs3l1dokwta3" path="res://Assets/sprites player/Still/Down/2.png" id="3_ubd00"]
+[ext_resource type="Texture2D" uid="uid://ctiaqrpurtgu6" path="res://Assets/sprites player/Attacks/Still/Down/14.png" id="3_y0mnt"]
 [ext_resource type="PackedScene" uid="uid://cet2cfyqxxrm1" path="res://The Sandstorm Arena/Scenes/HealthBar.tscn" id="4_gkhx6"]
-[ext_resource type="Texture2D" uid="uid://bqy2eg61qnwqg" path="res://Assets/Textures/sprites player/Attacks/Down/15.png" id="4_kdb8m"]
-[ext_resource type="Texture2D" uid="uid://n0cdxgkufcq1" path="res://Assets/Textures/sprites player/Down/3.png" id="4_sejh5"]
-[ext_resource type="Texture2D" uid="uid://cvq2lv6cb6fik" path="res://Assets/Textures/sprites player/Down/4.png" id="5_5jcgg"]
-[ext_resource type="Texture2D" uid="uid://cshn8i1hlyr8t" path="res://Assets/Textures/sprites player/Attacks/Down/16.png" id="5_umtea"]
-[ext_resource type="Texture2D" uid="uid://dt3cetotvsq71" path="res://Assets/Textures/sprites player/Right/5.png" id="6_5rloa"]
-[ext_resource type="Texture2D" uid="uid://ccoo4gstuh81g" path="res://Assets/Textures/sprites player/Attacks/Left/17.png" id="6_p38n1"]
-[ext_resource type="Texture2D" uid="uid://dcn1wxbqdcqw4" path="res://Assets/Textures/sprites player/Left/30.png" id="6_tcxrp"]
-[ext_resource type="Texture2D" uid="uid://fwstye8aa5h" path="res://Assets/Textures/sprites player/Attacks/Left/18.png" id="7_5u5vr"]
-[ext_resource type="Texture2D" uid="uid://uwe2kcctckum" path="res://Assets/Textures/sprites player/Left/31.png" id="7_j0bj1"]
-[ext_resource type="Texture2D" uid="uid://d37v5ja4dfp4n" path="res://Assets/Textures/sprites player/Right/6.png" id="7_tcxrp"]
-[ext_resource type="Texture2D" uid="uid://doscxqmae4nsh" path="res://Assets/Textures/sprites player/Left/32.png" id="8_8q7fj"]
-[ext_resource type="Texture2D" uid="uid://bv3105l6re04u" path="res://Assets/Textures/sprites player/Right/7.png" id="8_j0bj1"]
-[ext_resource type="Texture2D" uid="uid://dvfh8x4y44u6f" path="res://Assets/Textures/sprites player/Attacks/Left/19.png" id="8_ovc0q"]
-[ext_resource type="Texture2D" uid="uid://bsag2hl3ymrge" path="res://Assets/Textures/sprites player/Left/33.png" id="9_5k0gg"]
-[ext_resource type="Texture2D" uid="uid://btojify8iauo1" path="res://Assets/Textures/sprites player/Right/8.png" id="9_8q7fj"]
-[ext_resource type="Texture2D" uid="uid://bo653tk1ppm5e" path="res://Assets/Textures/sprites player/Attacks/Left/20.png" id="9_cax6x"]
-[ext_resource type="Texture2D" uid="uid://e3hklwwrumy7" path="res://Assets/Textures/sprites player/Attacks/Right/17.png" id="10_2gqab"]
-[ext_resource type="Texture2D" uid="uid://b03mjjcoletg3" path="res://Assets/Textures/sprites player/Up/9.png" id="10_5k0gg"]
-[ext_resource type="Texture2D" uid="uid://b72lvk3x4vcwx" path="res://Assets/Textures/sprites player/Up/10.png" id="11_1v66t"]
-[ext_resource type="Texture2D" uid="uid://x04mtkj1sqid" path="res://Assets/Textures/sprites player/Attacks/Right/18.png" id="11_m1aca"]
-[ext_resource type="Texture2D" uid="uid://dkfhbnys5ukvl" path="res://Assets/Textures/sprites player/Up/11.png" id="12_kkqgv"]
-[ext_resource type="Texture2D" uid="uid://bfbcgtln2a765" path="res://Assets/Textures/sprites player/Attacks/Right/19.png" id="12_mgmon"]
-[ext_resource type="Texture2D" uid="uid://do12w4r86e1e4" path="res://Assets/Textures/sprites player/Attacks/Right/20.png" id="13_4wljw"]
-[ext_resource type="Texture2D" uid="uid://cny7voii1kmh5" path="res://Assets/Textures/sprites player/Up/12.png" id="13_rf38a"]
-[ext_resource type="Texture2D" uid="uid://de4vfknd22c3v" path="res://Assets/Textures/sprites player/Attacks/Up/21.png" id="14_2rxtr"]
-[ext_resource type="Texture2D" uid="uid://b4qrsv31uukyn" path="res://Assets/Textures/sprites player/Attacks/Up/22.png" id="15_qeed8"]
-[ext_resource type="Texture2D" uid="uid://dwfhba8jthstc" path="res://Assets/Textures/sprites player/Attacks/Up/23.png" id="16_2uubb"]
-[ext_resource type="Texture2D" uid="uid://cegx8t800bdvx" path="res://Assets/Textures/sprites player/Attacks/Up/24.png" id="17_vafjd"]
+[ext_resource type="Texture2D" uid="uid://bqy2eg61qnwqg" path="res://Assets/sprites player/Attacks/Still/Down/15.png" id="4_kdb8m"]
+[ext_resource type="Texture2D" uid="uid://n0cdxgkufcq1" path="res://Assets/sprites player/Still/Down/3.png" id="4_sejh5"]
+[ext_resource type="Texture2D" uid="uid://cvq2lv6cb6fik" path="res://Assets/sprites player/Still/Down/4.png" id="5_5jcgg"]
+[ext_resource type="Texture2D" uid="uid://cshn8i1hlyr8t" path="res://Assets/sprites player/Attacks/Still/Down/16.png" id="5_umtea"]
+[ext_resource type="Texture2D" uid="uid://dt3cetotvsq71" path="res://Assets/sprites player/Still/Right/5.png" id="6_5rloa"]
+[ext_resource type="Texture2D" uid="uid://ccoo4gstuh81g" path="res://Assets/sprites player/Attacks/Still/Left/17.png" id="6_p38n1"]
+[ext_resource type="Texture2D" uid="uid://dcn1wxbqdcqw4" path="res://Assets/sprites player/Still/Left/30.png" id="6_tcxrp"]
+[ext_resource type="Texture2D" uid="uid://fwstye8aa5h" path="res://Assets/sprites player/Attacks/Still/Left/18.png" id="7_5u5vr"]
+[ext_resource type="Texture2D" uid="uid://uwe2kcctckum" path="res://Assets/sprites player/Still/Left/31.png" id="7_j0bj1"]
+[ext_resource type="Texture2D" uid="uid://d37v5ja4dfp4n" path="res://Assets/sprites player/Still/Right/6.png" id="7_tcxrp"]
+[ext_resource type="Texture2D" uid="uid://doscxqmae4nsh" path="res://Assets/sprites player/Still/Left/32.png" id="8_8q7fj"]
+[ext_resource type="Texture2D" uid="uid://bv3105l6re04u" path="res://Assets/sprites player/Still/Right/7.png" id="8_j0bj1"]
+[ext_resource type="Texture2D" uid="uid://dvfh8x4y44u6f" path="res://Assets/sprites player/Attacks/Still/Left/19.png" id="8_ovc0q"]
+[ext_resource type="Texture2D" uid="uid://bsag2hl3ymrge" path="res://Assets/sprites player/Still/Left/33.png" id="9_5k0gg"]
+[ext_resource type="Texture2D" uid="uid://btojify8iauo1" path="res://Assets/sprites player/Still/Right/8.png" id="9_8q7fj"]
+[ext_resource type="Texture2D" uid="uid://bo653tk1ppm5e" path="res://Assets/sprites player/Attacks/Still/Left/20.png" id="9_cax6x"]
+[ext_resource type="Texture2D" uid="uid://e3hklwwrumy7" path="res://Assets/sprites player/Attacks/Still/Right/17.png" id="10_2gqab"]
+[ext_resource type="Texture2D" uid="uid://b03mjjcoletg3" path="res://Assets/sprites player/Still/Up/9.png" id="10_5k0gg"]
+[ext_resource type="Texture2D" uid="uid://b72lvk3x4vcwx" path="res://Assets/sprites player/Still/Up/10.png" id="11_1v66t"]
+[ext_resource type="Texture2D" uid="uid://x04mtkj1sqid" path="res://Assets/sprites player/Attacks/Still/Right/18.png" id="11_m1aca"]
+[ext_resource type="Texture2D" uid="uid://dkfhbnys5ukvl" path="res://Assets/sprites player/Still/Up/11.png" id="12_kkqgv"]
+[ext_resource type="Texture2D" uid="uid://bfbcgtln2a765" path="res://Assets/sprites player/Attacks/Still/Right/19.png" id="12_mgmon"]
+[ext_resource type="Texture2D" uid="uid://do12w4r86e1e4" path="res://Assets/sprites player/Attacks/Still/Right/20.png" id="13_4wljw"]
+[ext_resource type="Texture2D" uid="uid://cny7voii1kmh5" path="res://Assets/sprites player/Still/Up/12.png" id="13_rf38a"]
+[ext_resource type="Texture2D" uid="uid://de4vfknd22c3v" path="res://Assets/sprites player/Attacks/Still/Up/21.png" id="14_2rxtr"]
+[ext_resource type="Texture2D" uid="uid://b4qrsv31uukyn" path="res://Assets/sprites player/Attacks/Still/Up/22.png" id="15_qeed8"]
+[ext_resource type="Texture2D" uid="uid://dwfhba8jthstc" path="res://Assets/sprites player/Attacks/Still/Up/23.png" id="16_2uubb"]
+[ext_resource type="Texture2D" uid="uid://cegx8t800bdvx" path="res://Assets/sprites player/Attacks/Still/Up/24.png" id="17_vafjd"]
+[ext_resource type="Texture2D" uid="uid://cgyeeueyymjvp" path="res://Assets/Textures/Mouse.png" id="34_y0mnt"]
+[ext_resource type="Texture2D" uid="uid://0iqq83dc265k" path="res://Assets/Textures/Player Image.png" id="35_kdb8m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_416t1"]
 animations = [{
@@ -50,7 +52,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_umtea")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Down",
 "speed": 8.0
 }, {
@@ -67,7 +69,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_cax6x")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Left",
 "speed": 8.0
 }, {
@@ -84,7 +86,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_4wljw")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Right",
 "speed": 8.0
 }, {
@@ -101,7 +103,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_vafjd")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_Up",
 "speed": 8.0
 }, {
@@ -196,7 +198,12 @@ script = ExtResource("1_2qyu8")
 position = Vector2(1.1368684e-13, 1.2499995)
 scale = Vector2(4, 3.861)
 sprite_frames = SubResource("SpriteFrames_416t1")
-animation = &"Attack_Up"
+animation = &"Attack_Down"
+
+[node name="Cursor" type="Sprite2D" parent="." unique_id=1733144541]
+position = Vector2(0, -99.99999)
+scale = Vector2(1.9999999, 1.9999999)
+texture = ExtResource("34_y0mnt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=506919228]
 position = Vector2(1, 0)
@@ -213,11 +220,17 @@ shape = SubResource("CapsuleShape2D_2qyu8")
 
 [node name="CameraRemoteTransform" type="RemoteTransform2D" parent="." unique_id=641597547]
 
+[node name="Player HealthBar" type="Sprite2D" parent="." unique_id=982326493]
+position = Vector2(0, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("35_kdb8m")
+
 [node name="HealthBar" parent="." unique_id=290621845 instance=ExtResource("4_gkhx6")]
-offset_left = -62.5
-offset_top = -83.75
-offset_right = 63.749985
-offset_bottom = -77.5
+offset_left = -124.99999
+offset_top = 405.0
+offset_right = 1.2499924
+offset_bottom = 411.25
+scale = Vector2(2, 2)
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=545427254]
 collision_mask = 8

@@ -14,9 +14,12 @@ public partial class Player : CharacterBody2D
 	public HealthBar _HealthBar;
 	
 	public Vector2 lastDirection = new Vector2(50.0f, 0.0f);
+	public Vector2 aimDirection = new Vector2(50.0f, 0.0f);
 	
 	public Area2D attackArea;
-	public float AttackRange = 50.0f;
+	public float attackRange = 50.0f;
+	public Sprite2D cursor;
+	public float cursorRange = 100.0f;
 	public bool inAttack = false;
 	
 	
@@ -26,22 +29,31 @@ public partial class Player : CharacterBody2D
 		body = GetNode<AnimatedSprite2D>("Body");
 		attackArea = GetNode<Area2D>("AttackArea");
 		_HealthBar = GetNode<HealthBar>("HealthBar");
-		PlayerDeath  += OnPlayerDeath;
+		cursor = GetNode<Sprite2D>("Cursor");
 		
 		_HealthBar.InitHealth(Health);
-		attackArea.Position = lastDirection.Normalized() * AttackRange;
+		attackArea.Position = lastDirection.Normalized() * attackRange;
+		cursor.Position = lastDirection.Normalized() * cursorRange;
+		
+		body.AnimationFinished += OnAttackAnimationFinished;
+		PlayerDeath  += OnPlayerDeath;
 	}
 
 	public override void _Process(double delta)
 	{
-		//LookAt(GetGlobalMousePosition());
+		Vector2 toMouse = GetGlobalMousePosition() - GlobalPosition;
+		cursor.Position = toMouse.Normalized() * cursorRange;
+		cursor.Rotation = toMouse.Angle();
+		
+		aimDirection =  GetGlobalMousePosition() - GlobalPosition;
+		
+		
 		if(Input.IsActionJustPressed("attack"))
 		{
-			UpdateAttackAnimation(lastDirection);
 			var bodies = attackArea.GetOverlappingBodies();
-			GD.Print("Bodies in attack area: " + bodies.Count);
-			GD.Print("attack them");
-			//attackArea.Position = lastDirection.Normalized() * AttackRange;
+			GD.Print("Bodies in attack area: --" + bodies.Count + "--");
+			GD.Print("You are attacking them, dealing 30 dmg");
+			AnimationAttack(aimDirection);
 			foreach (Node2D OverlapingBodies in attackArea.GetOverlappingBodies())
 			{
 				if(OverlapingBodies is Enemy1 enemy)
@@ -65,12 +77,13 @@ public partial class Player : CharacterBody2D
 			Input.GetAxis("move_left", "move_right"),
 			Input.GetAxis("move_up", "move_down")
 		);
+		
 
 		if (moveDir != Vector2.Zero)
 		{
 			lastDirection = moveDir;
 			Velocity = Speed * moveDir.Normalized();
-			UpdateAnimation(moveDir);
+			UpdateAnimationMove(moveDir);
 		}
 		else
 		{
@@ -78,17 +91,20 @@ public partial class Player : CharacterBody2D
 				Mathf.MoveToward(Velocity.X, 0, Speed),
 				Mathf.MoveToward(Velocity.Y, 0, Speed)
 			);
-			body.Stop();
+			if (!inAttack)
+			{
+				body.Stop();
+			}
 		}
 
 		MoveAndSlide();
-		attackArea.Position = lastDirection.Normalized() * AttackRange;
-		attackArea.Rotation = lastDirection.Angle();
+		attackArea.Position = aimDirection.Normalized() * attackRange;
+		attackArea.Rotation = aimDirection.Angle();
 	}
 	
-	private void UpdateAnimation(Vector2 direction)
+	private void UpdateAnimationMove(Vector2 direction)
 	{
-		if(!inAttack)
+		if (!inAttack)
 		{
 			if (Mathf.Abs(direction.X) > Mathf.Abs(direction.Y))
 			{
@@ -101,25 +117,33 @@ public partial class Player : CharacterBody2D
 		}
 	}
 	
-	private void UpdateAttackAnimation(Vector2 direction)
+	public void AnimationAttack(Vector2 direction)
 	{
 		inAttack = true;
 		if (Mathf.Abs(direction.X) > Mathf.Abs(direction.Y))
-		{
+			{
 			body.Play(direction.X > 0 ? "Attack_Right" : "Attack_Left");
 		}
 		else
 		{
 			body.Play(direction.Y > 0 ? "Attack_Down" : "Attack_Up");
 		}
-		inAttack = false;
 	}
+	
+	private void OnAttackAnimationFinished()
+	{
+		if (inAttack)
+		{
+			inAttack = false;
+		}
+	}
+	
 	
 	private void _on_hitbox_body_entered(Node2D body)
 	{
 		if (body is Enemy1)
 		{
-			GD.Print("touch an Enemy1");
+			GD.Print("An Enemy1 is touching the Player");
 		}
 	}
 	
@@ -127,7 +151,7 @@ public partial class Player : CharacterBody2D
 	public void TakeDamage(float amount)
 	{
 		Health -= amount;
-		GD.Print("Health: " + Health);
+		GD.Print("Taking Damage \nPlayer's Health: " + Health);
 		_HealthBar.Health = Health;
 
 		if (Health <= 0)
@@ -138,7 +162,7 @@ public partial class Player : CharacterBody2D
 	
 	private void OnPlayerDeath()
 	{
-		GD.Print("Player is dead");
+		GD.Print("The Player is dead");
 		QueueFree();
 	}
 	

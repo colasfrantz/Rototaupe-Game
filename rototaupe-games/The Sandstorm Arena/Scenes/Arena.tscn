@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dedg6cda7qxdt" path="res://The Sandstorm Arena/Scripts/Arena.cs" id="1_a7p1i"]
 [ext_resource type="PackedScene" uid="uid://b2cncchgty8ar" path="res://The Sandstorm Arena/Scenes/Rock.tscn" id="1_d5maw"]
 [ext_resource type="PackedScene" uid="uid://hdtl8pxx5ytn" path="res://The Sandstorm Arena/Scenes/Player.tscn" id="2_cb3xx"]
-[ext_resource type="Texture2D" uid="uid://bjnnpc6x4pb57" path="res://Assets/Textures/Tiles/tile set 1.png" id="2_yctlq"]
+[ext_resource type="Texture2D" uid="uid://bjnnpc6x4pb57" path="res://Assets/Tiles/tile set 1.png" id="2_yctlq"]
 [ext_resource type="PackedScene" uid="uid://blo2u6w4w6fw0" path="res://The Sandstorm Arena/Scenes/Enemy1.tscn" id="3_ensv4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pp6ao"]
