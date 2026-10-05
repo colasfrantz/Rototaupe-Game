@@ -17,10 +17,14 @@ public partial class Enemy1 : CharacterBody2D
 	private Timer AttackTimer;
 	private bool TouchingPlayer = false;
 	
+	public HealthBar _HealthBar;
+	
 	
 	public override void _Ready()
 	{
 		AttackTimer = GetNode<Timer>("AttackTimer");
+		_HealthBar = GetNode<HealthBar>("HealthBar");
+		_HealthBar.InitHealth(Health);
 		AttackTimer.WaitTime = 2;
 		AttackTimer.OneShot = false;
 		AttackTimer.Timeout += OnAttackTimerTimeout;
@@ -122,6 +126,8 @@ public partial class Enemy1 : CharacterBody2D
 	{
 		Health -= amount;
 		GD.Print(Name + "'s Health: " + Health);
+		_HealthBar.Health = Health;
+		
 		if (Health <= 0)
 		{
 			EmitSignal(SignalName.Enemy1Death);

@@ -106,13 +106,39 @@ public partial class Player : CharacterBody2D
 	{
 		if (!inAttack)
 		{
-			if (Mathf.Abs(direction.X) > Mathf.Abs(direction.Y))
+			float angle = Mathf.RadToDeg(direction.Angle());
+			int ang = Mathf.RoundToInt(angle / 45f) * 45;
+			switch(ang)
 			{
-				body.Play(direction.X > 0 ? "Right" : "Left");
-			}
-			else
-			{
-				body.Play(direction.Y > 0 ? "Down" : "Up");
+				case(0):
+					body.Play("Right");
+					break;
+				case(45):
+					body.Play("DownRight");
+					break;
+				case(90):
+					body.Play("Down");
+					break;
+				case(135):
+					body.Play("DownLeft");
+					break;
+				case(180):
+					body.Play("Left");
+					break;
+				case(-180):
+					body.Play("Left");
+					break;
+				case(-135):
+					body.Play("UpLeft");
+					break;
+				case(-90):
+					body.Play("Up");
+					break;
+				case(-45):
+					body.Play("UpRight");
+					break;
+				default:
+					break;
 			}
 		}
 	}
@@ -120,13 +146,39 @@ public partial class Player : CharacterBody2D
 	public void AnimationAttack(Vector2 direction)
 	{
 		inAttack = true;
-		if (Mathf.Abs(direction.X) > Mathf.Abs(direction.Y))
-			{
-			body.Play(direction.X > 0 ? "Attack_Right" : "Attack_Left");
-		}
-		else
+		float angle = Mathf.RadToDeg(direction.Angle());
+		int ang = Mathf.RoundToInt(angle / 45f) * 45;
+		switch(ang)
 		{
-			body.Play(direction.Y > 0 ? "Attack_Down" : "Attack_Up");
+			case(0):
+				body.Play("Attack_Right");
+				break;
+			case(45):
+				body.Play("Attack_Down_Right");
+				break;
+			case(90):
+				body.Play("Attack_Down");
+				break;
+			case(135):
+				body.Play("Attack_Down_Left");
+				break;
+			case(180):
+				body.Play("Attack_Left");
+				break;
+			case(-180):
+				body.Play("Attack_Left");
+				break;
+			case(-135):
+				body.Play("Attack_Up_Left");
+				break;
+			case(-90):
+				body.Play("Attack_Up");
+				break;
+			case(-45):
+				body.Play("Attack_Up_Right");
+				break;
+			default:
+				break;
 		}
 	}
 	

@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://blo2u6w4w6fw0"]
 
-[ext_resource type="Texture2D" uid="uid://6g8r87kdvgb1" path="res://Assets/Textures/enemy1.png" id="1_6h3xw"]
+[ext_resource type="Texture2D" uid="uid://6g8r87kdvgb1" path="res://Assets/img/enemy1.png" id="1_6h3xw"]
 [ext_resource type="Script" uid="uid://sf2vb1s1lffa" path="res://The Sandstorm Arena/Scripts/Enemy1.cs" id="1_b4jrr"]
+[ext_resource type="PackedScene" uid="uid://cet2cfyqxxrm1" path="res://The Sandstorm Arena/Scenes/HealthBar.tscn" id="3_objhh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4jrr"]
 radius = 30.0
@@ -42,6 +43,12 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox" unique_id=1485275760]
 shape = SubResource("CapsuleShape2D_erqsb")
+
+[node name="HealthBar" parent="." unique_id=290621845 instance=ExtResource("3_objhh")]
+offset_left = -36.0
+offset_top = -41.0
+offset_right = 24.0
+offset_bottom = -37.0
 
 [connection signal="body_entered" from="Player detector" to="." method="_on_player_detector_body_entered"]
 [connection signal="body_exited" from="Player detector" to="." method="_on_player_detector_body_exited"]
